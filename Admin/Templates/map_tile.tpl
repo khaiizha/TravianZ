@@ -47,6 +47,7 @@ function upd_village_to_oasis($village_id, $new_oasis_type){
   mysqli_begin_transaction($GLOBALS['link']);
   mysqli_query($GLOBALS['link'], 'INSERT INTO `'.TB_PREFIX.'odata` (`wref`, `type`, `conqured`, `wood`, `iron`, `clay`, `maxstore`, `crop`, `maxcrop`, `loyalty`, `owner`, `name`, `high`) VALUES ('.$village_id.', '.$new_oasis_type.', 0, 800, 800, 800, 800, 800, 800, 100, 2, "Unoccupied Oasis", '.rand(0, 2).')');
   mysqli_query($GLOBALS['link'], 'UPDATE `'.TB_PREFIX.'wdata` SET `fieldtype` = 0, `oasistype` = '.$new_oasis_type.', `image` = "o'.$new_oasis_type.'" WHERE `id` = '.$village_id);
+  mysqli_query($GLOBALS['link'], 'INSERT INTO `'.TB_PREFIX.'units` (`vref`, `u1`, `u2`, `u3`, `u4`, `u5`, `u6`, `u7`, `u8`, `u9`, `u10`, `u11`, `u12`, `u13`, `u14`, `u15`, `u16`, `u17`, `u18`, `u19`, `u20`, `u21`, `u22`, `u23`, `u24`, `u25`, `u26`, `u27`, `u28`, `u29`, `u30`, `u31`, `u32`, `u33`, `u34`, `u35`, `u36`, `u37`, `u38`, `u39`, `u40`, `u41`, `u42`, `u43`, `u44`, `u45`, `u46`, `u47`, `u48`, `u49`, `u50`, `u99`, `u99o`, `hero`) VALUES ('.$village_id.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)');
   mysqli_commit($GLOBALS['link']);
 }
 function upd_oasis_to_village($village_id, $new_village_type){

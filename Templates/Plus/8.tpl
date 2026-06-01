@@ -36,7 +36,7 @@ if($session->sit == 0) {
         $vname = mysqli_real_escape_string($database->dblink, $village->vname);
 		mysqli_query($database->dblink,
 		"INSERT INTO ".TB_PREFIX."gold_fin_log 
-		(uid, wid, action, gold, time, details) 
+		(uid, wid, action, gold, time, log) 
 		VALUES ($uid, $wid, 'Buy Travian Plus', -$cost, $now, 'Buy Travian Plus')"
 		);
 

@@ -35,7 +35,7 @@ if($session->sit == 0) {
         // LOG pentru a2b2.php
 		mysqli_query($database->dblink,
 		"INSERT INTO ".TB_PREFIX."gold_fin_log 
-		(uid, wid, action, gold, time, details) 
+		(uid, wid, action, gold, time, log) 
 		VALUES ($uid, $wid, 'Use 5 gold for +25% Lumber', -$cost, $now, '+25% Production: Lumber')"
 		);
 
